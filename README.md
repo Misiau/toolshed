@@ -125,8 +125,8 @@ dotnet test       # znowu 1 czerwony
 ```
 
 ## Dla szybszych
-- **#6 Zgłoszenie od klienta:** niejasny opis, prawdziwy błąd gdzieś w cenniku. Agent musi go znaleźć, zanim cokolwiek zmieni.
-- **#7 Nowa reguła RENT-33:** zgłoszenie od właściciela, które jest sprzeczne z regulaminem. Dobry agent zapyta zamiast zgadywać.
+- **#6 Nowa reguła RENT-33:** zgłoszenie od właściciela, które jest sprzeczne z regulaminem. Dobry agent zapyta zamiast zgadywać.
+- **#7 Zgłoszenie od klientki:** niejasny opis, prawdziwy błąd gdzieś w cenniku. Agent musi go znaleźć, zanim cokolwiek zmieni.
 
 ## Co jest w repo
 | Ścieżka | Po co |
