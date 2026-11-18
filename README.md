@@ -18,6 +18,23 @@ pracujemy z agentami. Ten plik to instrukcja do **S03: agent w terminalu** (Open
 
 Nowa sesja = nowe issues i nowy tag. Powiadomienia: kliknij **Watch → All Activity** na górze repo.
 
+## Jak oddajesz
+
+| Co | Gdzie | Jak |
+|---|---|---|
+| **Zadania z sesji** (kod w ToolShed) | **Draft Pull Request** z gałęzi `<nick>/sNN` do `main`, tytuł `SNN · <nick>` | commit + `git push -u origin <nick>/sNN`, potem na GitHubie **Create draft pull request**; opis wypełnia się z szablonu (dziennik zgód, wyniki). Jeden PR na sesję. **Nie mergujemy.** Prowadzący komentuje w PR. |
+| **Praca domowa** (Twój własny projekt) | **komentarz pod issue „SNN · Praca domowa”** | raport według szablonu z issue; skill wklej jako blok kodu. Kodu firmowego nie wklejamy. |
+| **Utknąłem** | komentarz pod issue zadania | system, krok, dokładny komunikat błędu. Szybkie pytania: wątek na Teams. |
+| **Wyciek klucza** | **prywatnie do prowadzącego**, od razu | i usuń klucz w AI Studio |
+
+```powershell
+git add -A
+git commit -m "S03: <co zrobiłeś>"
+git push -u origin <nick>/s03
+gh pr create --draft --fill-first --title "S03 · <nick>"   # albo przez stronę GitHuba
+```
+Push nie działa? Wklej `git diff` i dziennik zgód w komentarzu pod issue #1.
+
 ## Dostęp (raz, przed pierwszą sesją)
 1. Zaakceptuj zaproszenie do repo (mail z GitHuba albo https://github.com/Misiau/toolshed/invitations). Zaproszenie wygasa po 7 dniach.
 2. Przy pierwszym `git clone` Windows otworzy okno logowania do GitHuba (Git Credential Manager). Alternatywnie: `gh auth login`.
