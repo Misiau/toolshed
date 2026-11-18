@@ -69,7 +69,7 @@ cd ToolShed
 git switch -c <twój-nick>/s03
 dotnet test
 ```
-Oczekiwane: **1 czerwony** (`DurationDays_CountsPickupAndReturnDay`: expected 7, actual 6), 1 zielony.
+Oczekiwane: **1 czerwony** (`DurationDays_CountsPickupAndReturnDay`: expected 7, actual 6), 15 zielonych.
 
 ## 4. Pierwsze uruchomienie (3 min)
 ```powershell
@@ -124,12 +124,25 @@ git status        # nowe pliki? usuń je ręcznie albo: git clean -fd (usuwa WSZ
 dotnet test       # znowu 1 czerwony
 ```
 
+## Dla szybszych
+- **#6 Zgłoszenie od klienta:** niejasny opis, prawdziwy błąd gdzieś w cenniku. Agent musi go znaleźć, zanim cokolwiek zmieni.
+- **#7 Nowa reguła RENT-33:** zgłoszenie od właściciela, które jest sprzeczne z regulaminem. Dobry agent zapyta zamiast zgadywać.
+
 ## Co jest w repo
-| Plik | Po co |
+| Ścieżka | Po co |
 |---|---|
 | `AGENTS.md` | stałe instrukcje dla agenta (czyta je przy każdej sesji) |
 | `opencode.json` | model, **uprawnienia** (co wolno bez pytania, co nigdy), serwer MCP |
-| `.agents/skills/napraw-blad/SKILL.md` | gotowy skill: naprawa błędu od czerwonego testu |
-| `.agents/skills/testy-xunit/SKILL.md` | szkielet skilla do uzupełnienia na warsztacie |
-| `src/ToolShed/Loan.cs` | błąd (RENT-12) i komentarz-pułapka |
-| `src/ToolShed/LateFee.cs` | reguła RENT-20 bez testów |
+| `docs/regulamin.md` | reguły biznesowe RENT-xx: źródło prawdy |
+| `docs/architektura.md` | mapa kodu i przepływ wypożyczenia |
+| `.agents/skills/napraw-blad/` | gotowy skill: naprawa błędu od czerwonego testu |
+| `.agents/skills/testy-xunit/` | szkielet skilla do uzupełnienia na warsztacie |
+| `src/ToolShed/Loan.cs` | wypożyczenie; błąd RENT-12 i komentarz-pułapka |
+| `src/ToolShed/LateFee.cs` | opłata za spóźnienie, RENT-20, bez testów |
+| `src/ToolShed/Pricing/` | cennik (RENT-30..32), kaucja (RENT-40) |
+| `src/ToolShed/Availability/` | dostępność sprzętu (RENT-50..52) |
+| `src/ToolShed/Services/` | `LoanService`: wypożyczenie i zwrot (RENT-13, RENT-70) |
+| `src/ToolShed/Notifications/`, `Reporting/` | przypomnienia (RENT-60), raport miesięczny (RENT-80) |
+| `tests/ToolShed.Tests/` | 16 testów xUnit; istniejące pliki testów są chronione w `opencode.json` |
+
+Na starcie `dotnet test`: **15 zielonych, 1 czerwony**.
