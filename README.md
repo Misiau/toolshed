@@ -124,6 +124,25 @@ git status        # nowe pliki? usuń je ręcznie albo: git clean -fd (usuwa WSZ
 dotnet test       # znowu 1 czerwony
 ```
 
+## Uruchomienie aplikacji
+ToolShed to biblioteka z logiką (`src/ToolShed`) i cienkie API nad nią (`src/ToolShed.Api`).
+```powershell
+dotnet run --project src/ToolShed.Api      # http://localhost:5080
+```
+Żądania do przeklikania są w `src/ToolShed.Api/requests.http` (VS Code z rozszerzeniem REST Client, Visual Studio, Rider). Dane trzymane są w pamięci, więc restart przywraca stan początkowy. Przypomnienia mailowe lądują w konsoli serwera.
+
+| Endpoint | Co robi |
+|---|---|
+| `GET /items` | lista sprzętu |
+| `GET /items/{id}/quote?customerId=&from=&to=` | wycena i kaucja |
+| `GET /items/{id}/availability?from=&to=` | dostępność |
+| `GET /loans`, `POST /loans` | wypożyczenia; naruszenie reguły daje 400 z `rule` (np. RENT-70) |
+| `POST /loans/{id}/return` | zwrot i opłata za spóźnienie |
+| `POST /jobs/overdue-reminders` | przypomnienia o zaległych zwrotach |
+| `GET /reports/monthly?year=&month=` | raport miesięczny |
+
+Uruchamiasz Ty, nie agent: `dotnet run` się nie kończy, a agent czekałby w nieskończoność.
+
 ## Dla szybszych
 - **#6 Nowa reguła RENT-33:** zgłoszenie od właściciela, które jest sprzeczne z regulaminem. Dobry agent zapyta zamiast zgadywać.
 - **#7 Zgłoszenie od klientki:** niejasny opis, prawdziwy błąd gdzieś w cenniku. Agent musi go znaleźć, zanim cokolwiek zmieni.
@@ -143,6 +162,7 @@ dotnet test       # znowu 1 czerwony
 | `src/ToolShed/Availability/` | dostępność sprzętu (RENT-50..52) |
 | `src/ToolShed/Services/` | `LoanService`: wypożyczenie i zwrot (RENT-13, RENT-70) |
 | `src/ToolShed/Notifications/`, `Reporting/` | przypomnienia (RENT-60), raport miesięczny (RENT-80) |
+| `src/ToolShed.Api/` | minimal API + `requests.http` |
 | `tests/ToolShed.Tests/` | 16 testów xUnit; istniejące pliki testów są chronione w `opencode.json` |
 
 Na starcie `dotnet test`: **15 zielonych, 1 czerwony**.

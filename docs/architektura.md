@@ -13,6 +13,8 @@ src/ToolShed/
   Notifications/                OverdueReminderJob (RENT-60), INotificationSender
   Reporting/                    MonthlyRevenueReport (RENT-80)
   Data/                         interfejsy repozytoriów, repozytoria w pamięci, SampleData
+src/ToolShed.Api/               minimal API nad biblioteką (bez dodatkowych paczek NuGet);
+                                dane w pamięci + kilka wypożyczeń startowych; requests.http
 tests/ToolShed.Tests/           xUnit; TestData z wspólnymi obiektami (2.03.2026 = poniedziałek)
 docs/regulamin.md               reguły biznesowe RENT-xx: źródło prawdy
 ```

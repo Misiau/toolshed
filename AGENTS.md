@@ -6,6 +6,7 @@ Mapa kodu: `docs/architektura.md`. Reguły biznesowe RENT-xx: `docs/regulamin.md
 ## Polecenia
 - Build: `dotnet build`
 - Testy: `dotnet test` (uruchamiaj po każdej zmianie w `src/`)
+- API: `dotnet run --project src/ToolShed.Api` (http://localhost:5080). **Nie uruchamiaj go sam**: proces się nie kończy. Poproś człowieka albo sprawdzaj logikę testami.
 
 ## Zasady
 - **Nie zmieniaj istniejących testów, żeby test przeszedł.** Czerwony test = błąd w `src/`, chyba że użytkownik wprost powie inaczej. Nowe testy dopisuj w nowych plikach.

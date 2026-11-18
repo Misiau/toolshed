@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D26E543A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolShed.Tests", "tests\ToolShed.Tests\ToolShed.Tests.csproj", "{239105B8-8759-4562-A3F4-1292667A674B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolShed.Api", "src\ToolShed.Api\ToolShed.Api.csproj", "{7B50739A-E44D-4A12-A82D-ECB8AB77B39D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +30,14 @@ Global
 		{239105B8-8759-4562-A3F4-1292667A674B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{239105B8-8759-4562-A3F4-1292667A674B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{239105B8-8759-4562-A3F4-1292667A674B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B50739A-E44D-4A12-A82D-ECB8AB77B39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B50739A-E44D-4A12-A82D-ECB8AB77B39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B50739A-E44D-4A12-A82D-ECB8AB77B39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B50739A-E44D-4A12-A82D-ECB8AB77B39D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{18AD3A16-E12D-44F6-8817-9B1AA2802229} = {73B5F8C1-1AB4-474F-A224-BCDD84437D7A}
 		{239105B8-8759-4562-A3F4-1292667A674B} = {D26E543A-3C56-411D-9DA5-8530C7B3D81C}
+		{7B50739A-E44D-4A12-A82D-ECB8AB77B39D} = {73B5F8C1-1AB4-474F-A224-BCDD84437D7A}
 	EndGlobalSection
 EndGlobal

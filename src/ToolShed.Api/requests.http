@@ -1,0 +1,51 @@
+# ToolShed API: przykładowe żądania.
+# VS Code: rozszerzenie "REST Client" → "Send Request" nad każdym żądaniem. Visual Studio / Rider: wbudowane.
+# Najpierw: dotnet run --project src/ToolShed.Api
+# Daty w formacie RRRR-MM-DD. Klienci: 1 Anna (członek), 2 Piotr (zaległy zwrot!), 3 Kasia (członek), 4 Marek (zablokowany).
+
+@api = http://localhost:5080
+
+### Lista sprzętu
+GET {{api}}/items
+
+### Wycena: wiertarka dla Piotra, poniedziałek-środa
+GET {{api}}/items/1/quote?customerId=2&from=2026-12-07&to=2026-12-09
+
+### Wycena: namiot dla Anny, sobota-niedziela (porównaj z regulaminem RENT-30!)
+GET {{api}}/items/8/quote?customerId=1&from=2026-12-05&to=2026-12-06
+
+### Dostępność: odkurzacz jest w naprawie (RENT-52)
+GET {{api}}/items/7/availability?from=2026-12-07&to=2026-12-08
+
+### Wypożycz: Anna bierze kosiarkę
+POST {{api}}/loans
+Content-Type: application/json
+
+{ "customerId": 1, "itemId": 3, "from": "2026-12-07", "to": "2026-12-09" }
+
+### Wypożycz: Piotr ma zaległy zwrot → 400, RENT-70
+POST {{api}}/loans
+Content-Type: application/json
+
+{ "customerId": 2, "itemId": 1, "from": "2026-12-07", "to": "2026-12-08" }
+
+### Wypożycz: za długo → 400, RENT-13
+POST {{api}}/loans
+Content-Type: application/json
+
+{ "customerId": 3, "itemId": 2, "from": "2026-12-07", "to": "2027-01-15" }
+
+### Wszystkie wypożyczenia
+GET {{api}}/loans
+
+### Zwrot wypożyczenia nr 5 (to z żądania „Anna bierze kosiarkę”) dwa dni po terminie
+POST {{api}}/loans/5/return
+Content-Type: application/json
+
+{ "returnedOn": "2026-12-11" }
+
+### Przypomnienia o zaległych zwrotach (mail ląduje w konsoli serwera)
+POST {{api}}/jobs/overdue-reminders
+
+### Raport miesięczny (dane startowe są z poprzedniego miesiąca)
+GET {{api}}/reports/monthly?year=2026&month=10
