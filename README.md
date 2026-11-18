@@ -110,6 +110,13 @@ W `opencode.json` zmień przy serwerze `mslearn` `"disabled": true` na `false` i
 Zapytaj: `Sprawdź w dokumentacji Microsoft Learn, jak działa DateOnly.DayNumber, i potwierdź, czy poprawka w Loan.cs jest zgodna z dokumentacją.`
 Zobacz, jakie narzędzie MCP zostało wywołane i co wróciło do kontekstu.
 
+## Nie działa instalacja? Agent w przeglądarce
+Bez instalacji, na tym samym darmowym koncie Google:
+1. https://aistudio.google.com → **Playground** → przełącz na **Agents**.
+2. W plikach agenta utwórz `AGENTS.md` i `.agents/skills/napraw-blad/SKILL.md`, czyli skopiuj ich treść z tego repo.
+3. Wgraj `src/ToolShed/Loan.cs` i `tests/ToolShed.Tests/LoanTests.cs` i poproś: `Znajdź przyczynę czerwonego testu DurationDays_CountsPickupAndReturnDay i zaproponuj poprawkę.`
+Tu agent nie uruchomi `dotnet test` u Ciebie, ale zobaczysz `AGENTS.md`, skille i (opcjonalnie) MCP w działaniu.
+
 ## Reset
 ```powershell
 git restore .
