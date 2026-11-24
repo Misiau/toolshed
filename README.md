@@ -1,8 +1,12 @@
 # ToolShed: repozytorium ćwiczeniowe kursu AI
 
-Wypożyczalnia sprzętu: mała biblioteka .NET 8 z podłożonymi błędami. Na niej przez cały kurs
-pracujemy z agentami. Ten plik to instrukcja do **S03: agent w terminalu** (OpenCode, uprawnienia,
-`AGENTS.md`, skille, MCP), wszystko na **darmowym kluczu Gemini**.
+Wypożyczalnia sprzętu: biblioteka .NET 8 z API i podłożonymi błędami. Na niej przez cały kurs
+pracujemy z agentami. Kurs jest **niezależny od narzędzia**: ścieżka główna to **Codex** (darmowe konto ChatGPT),
+równolegle **OpenCode**, a Copilot i Claude Code też się nadają. `AGENTS.md` i skille w `.agents/skills/` działają wszędzie.
+
+**Instrukcje warsztatów:**
+- **S04 MCP i skille:** `docs/warsztat-s04.md`;
+- **S03 agent w terminalu:** ten plik, sekcje 0-8 (OpenCode na darmowym kluczu Gemini).
 
 > Repozytorium jest **prywatne i ćwiczeniowe**: kod jest wymyślony na potrzeby kursu.
 > **Nie wklejaj tu kodu firmowego ani danych klientów** i nie wysyłaj ich do darmowych modeli.
