@@ -1,6 +1,13 @@
-# Warsztat S04: MCP i skille w praktyce
+# S04: skille i MCP, zadania między sesjami (do wtorku 1.12)
+
+Na spotkaniu S04 rozmawialiśmy o skillach, MCP i łączeniu ich w większą całość. Tu są **zadania na czas między sesjami** (razem ok. 60-70 min). Wynik trafia do Draft PR `S04 · <nick>`, raport pod issue #12.
 
 Każdy krok ma wersję dla **Codex** (ścieżka główna kursu) i **OpenCode**. Masz Copilota albo Claude Code? Skorzystaj z tabeli „Gdzie co mieszka” na końcu. Porównanie różnych narzędzi to część zadania.
+
+Kolejność:
+1. Ręce 1: MCP (#9);
+2. Ręce 2: gotowy skill (#10);
+3. Ręce 3: **Twój skill**, temat z mapy automatyzacji ze spotkania (#11).
 
 Przed startem:
 ```powershell
@@ -58,9 +65,13 @@ Alternatywa w Codex: wbudowany skill `$skill-installer`, który instaluje skille
 
 ---
 
-## Ręce 3: Twój skill `verify-change` (ok. 15 min)
+## Ręce 3: Twój skill (ok. 30 min)
 
-Skill, którego zespół użyje po **każdej** zmianie w ToolShed. Napisz go z pomocą agenta:
+Temat to pozycja z **mapy automatyzacji** ze spotkania (rzecz, którą robisz co tydzień w kilku krokach).
+- **Skill do Twojej pracy:** trzymaj go w `~/.agents/skills/<nazwa>/` (poza repo). W PR opisz go słowami, bez treści i danych firmowych.
+- **Brak pomysłu:** zrób `verify-change` dla ToolShed, opisany niżej. To skill, którego zespół użyje po **każdej** zmianie.
+
+Napisz skill z pomocą agenta:
 - **Codex:** `$skill-creator` (wbudowany);
 - **OpenCode:** poproś agenta o napisanie skilla według `docs/warsztat-s04.md` i specyfikacji agentskills.io.
 
