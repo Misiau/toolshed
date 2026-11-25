@@ -4,10 +4,13 @@ Na spotkaniu S04 rozmawialiśmy o skillach, MCP i łączeniu ich w większą ca�
 
 Każdy krok ma wersję dla **Codex** (ścieżka główna kursu) i **OpenCode**. Masz Copilota albo Claude Code? Skorzystaj z tabeli „Gdzie co mieszka” na końcu. Porównanie różnych narzędzi to część zadania.
 
+Nie było Cię na spotkaniu? Zacznij od przypiętego issue **#16** („Start tutaj”): skrót sesji i kolejność zadań.
+
 Kolejność:
 1. Ręce 1: MCP (#9);
 2. Ręce 2: gotowy skill (#10);
-3. Ręce 3: **Twój skill**, temat z mapy automatyzacji ze spotkania (#11).
+3. Ręce 3: **Twój skill**, temat z mapy automatyzacji (#11; mapa jest opisana w issue, jeśli Cię nie było);
+4. Bonus: orkiestracja z subagentami reviewer i tester, artefakty w plikach (#15).
 
 Przed startem:
 ```powershell
