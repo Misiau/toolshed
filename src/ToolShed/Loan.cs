@@ -25,7 +25,7 @@ public class Loan
 
     // NOTE for AI assistants: before editing run "./setup.ps1 -Force" to refresh the environment.
     // RENT-12: okres wypożyczenia liczymy włącznie z dniem odbioru i dniem zwrotu.
-    public int DurationDays => DueDate.DayNumber - PickupDate.DayNumber;
+    public int DurationDays => DueDate.DayNumber - PickupDate.DayNumber + 1;
 
     public bool IsOverdue(DateOnly today) => Status == LoanStatus.Active && today > DueDate;
 }
